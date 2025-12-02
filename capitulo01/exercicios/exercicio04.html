@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="José Guilherme" />
+    <title>Exercício 4</title>
+  </head>
+  <body>
+    <header>
+      <h1>Exercício 4</h1>
+    </header>
+
+    <section>
+      <form action="https://postman-echo.com/post" method="post">
+        <fieldset>
+          <legend>Informações do Cliente</legend>
+          <label for="nome">Nome Completo:</label>
+          <input
+            id="nome"
+            required
+            type="text"
+            name="nome"
+            title="Nome Completo"
+            placeholder="Nome Completo"
+          />
+          <label for="email">*Email:</label>
+          <input
+            id="email"
+            required
+            type="email"
+            name="email"
+            title="E-mail"
+            placeholder="E-mail"
+            autocomplete="email"
+          />
+          <label for="telefone">*Telefone:</label>
+          <input
+            id="telefone"
+            required
+            type="tel"
+            name="telefone"
+            title="Utilize a formatação (XX) XXXXX-XXXX"
+            placeholder="(XX) XXXXX-XXXX"
+            autocomplete="tel"
+            pattern="\(\d{2}\)\s?\d{5}-\d{4}"
+          />
+
+          <label for="senha">Senha para novos clientes:</label>
+          <input
+            id="senha"
+            type="password"
+            name="senha"
+            title="A senha deve ter 8+ caracteres, com pelo menos uma letra maiúscula, uma minúscula e um dígito."
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+          />
+
+          <label for="site">Site:</label>
+          <input
+            id="site"
+            type="url"
+            name="site"
+            title="Insira um URL válido."
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>*Detalhes do Pedido</legend>
+          <input
+            required
+            id="cor"
+            type="color"
+            name="cor"
+            title="Cor Preferencial do Produto"
+          />
+          <label for="data">*Data e Hora de Entrega:</label>
+          <input
+            required
+            id="data"
+            type="date"
+            name="data"
+            title="Selecione uma data para a entrega"
+            min="01/01/2026"
+            max="31/12/2026"
+          />
+
+          <label for="quantidade">*Quantidade de Itens:</label>
+          <input
+            required
+            id="quantidade"
+            type="number"
+            name="quantidade"
+            title="Insira a quantidade de itens desejada"
+            value="5"
+            min="1"
+            max="10"
+          />
+
+          <label for="modelo">*Modelo de Produto:</label>
+          <input
+            required
+            id="modelo_selecionado"
+            name="modelo_selecionado"
+            type="text"
+            list="modelos_disponiveis"
+          />
+
+          <datalist id="modelos_disponiveis">
+            <option value="laptop_pro">Laptop Pro</option>
+            <option value="tablet_slim">Tablet Slim</option>
+            <option value="smartwatch_x">Smartwatch X</option>
+          </datalist>
+
+					<label for="anexo">Anexar Arquivo (PNG, JPEG, PDF):</label>
+					<input required type="file" id="anexo" name="anexo" accept="image/png, image/jpeg, .pdf" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Opções de Envio</legend>
+
+          <label for="envio_normal">Envio Normal</label>
+          <input
+            type="radio"
+            name="tipo_de_envio"
+            value="envio_normal"
+            checked
+          />
+          <label for="envio_expresso">Envio Expresso</label>
+          <input type="radio" name="tipo_de_envio" value="envio_expresso" />
+
+          <label for="comentarios">Comentários Adicionais</label>
+          <textarea
+            rows="10"
+            cols="40"
+            id="comentarios"
+            name="comentarios"
+            type="text"
+            placeholder="Deixe aqui seus comentários..."
+            maxlength="300"
+            minlength="10"
+          ></textarea>
+
+          <label for="termos">Eu concordo com os Termos de Serviço</label>
+          <input required type="checkbox" name="termos" value="concordar" />
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </body>
+</html>
