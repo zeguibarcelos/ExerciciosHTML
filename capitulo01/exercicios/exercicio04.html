@@ -67,7 +67,6 @@
         <fieldset>
           <legend>*Detalhes do Pedido</legend>
           <input
-            required
             id="cor"
             type="color"
             name="cor"
@@ -80,8 +79,8 @@
             type="date"
             name="data"
             title="Selecione uma data para a entrega"
-            min="01/01/2026"
-            max="31/12/2026"
+            min="2026-01-01"
+            max="2026-12-31"
           />
 
           <label for="quantidade">*Quantidade de Itens:</label>
@@ -96,7 +95,7 @@
             max="10"
           />
 
-          <label for="modelo">*Modelo de Produto:</label>
+          <label for="modelo_selecionado">*Modelo de Produto:</label>
           <input
             required
             id="modelo_selecionado"
@@ -111,8 +110,14 @@
             <option value="smartwatch_x">Smartwatch X</option>
           </datalist>
 
-					<label for="anexo">Anexar Arquivo (PNG, JPEG, PDF):</label>
-					<input required type="file" id="anexo" name="anexo" accept="image/png, image/jpeg, .pdf" />
+          <label for="anexo">Anexar Arquivo (PNG, JPEG, PDF):</label>
+          <input
+            required
+            type="file"
+            id="anexo"
+            name="anexo"
+            accept="image/png, image/jpeg, .pdf"
+          />
         </fieldset>
 
         <fieldset>
@@ -120,13 +125,20 @@
 
           <label for="envio_normal">Envio Normal</label>
           <input
+            id="envio_normal"
             type="radio"
             name="tipo_de_envio"
             value="envio_normal"
             checked
           />
+
           <label for="envio_expresso">Envio Expresso</label>
-          <input type="radio" name="tipo_de_envio" value="envio_expresso" />
+          <input
+            id="envio_expresso"
+            type="radio"
+            name="tipo_de_envio"
+            value="envio_expresso"
+          />
 
           <label for="comentarios">Comentários Adicionais</label>
           <textarea
@@ -134,14 +146,13 @@
             cols="40"
             id="comentarios"
             name="comentarios"
-            type="text"
             placeholder="Deixe aqui seus comentários..."
             maxlength="300"
             minlength="10"
           ></textarea>
 
           <label for="termos">Eu concordo com os Termos de Serviço</label>
-          <input required type="checkbox" name="termos" value="concordar" />
+          <input id="termos" required type="checkbox" name="termos" value="concordar" />
         </fieldset>
 
         <button type="submit">Enviar</button>
